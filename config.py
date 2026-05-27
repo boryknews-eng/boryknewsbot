@@ -1,8 +1,13 @@
-import os
-from dotenv import load_dotenv
+# 🤖 BorykNews CONFIG
 
-load_dotenv()  # <-- читає .env файл
+# 🔑 Токен бота (від BotFather)
+TOKEN = ""
 
-TOKEN = os.getenv("8898513998:AAG2cnBH11bzp4hG2vupguOdRa58UlzDegQ")
-ADMIN_ID = int(os.getenv("ADMIN_ID"))
-CHANNEL_ID = int(os.getenv("CHANNEL_ID"))
+# 👤 Твій Telegram ID (ти адмін)
+ADMIN_ID = 5035250994
+
+# 📢 Канал для публікацій :contentReference[oaicite:0]{index=0}
+CHANNEL_ID = -1003095797330
+
+# 🔗 посилання на канал
+CHANNEL_LINK = "https://t.me/BorykNews"
