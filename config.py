@@ -1,7 +1,7 @@
 # 🤖 BorykNews CONFIG
 
 # 🔑 Токен бота (від BotFather)
-TOKEN = "8898513998:AAEOINxzryuRcJm5kg1PvRfDWLRyH2QC_eU"
+TOKEN = ""
 
 # 👤 Твій Telegram ID (ти адмін)
 ADMIN_ID = 5035250994
