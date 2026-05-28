@@ -76,10 +76,21 @@ def send_to_moderation(message):
 
 
 # ================= MAIN =================
+```python id="95d6bq"
 def handle_message(message):
 
     chat_id = message["chat"]["id"]
     text = message.get("text", "")
+
+    if text == "/start":
+
+        send_message(
+            chat_id,
+            "🛰 Вітаємо в BorykNews 🚀"
+        )
+
+        return
+```
 
     # ================= START =================
     if text == "/start":
