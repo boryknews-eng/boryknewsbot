@@ -76,7 +76,7 @@ def send_to_moderation(message):
 
 
 # ================= MAIN =================
-```python id="95d6bq"
+
 def handle_message(message):
 
     chat_id = message["chat"]["id"]
@@ -90,7 +90,7 @@ def handle_message(message):
         )
 
         return
-```
+
 
     # ================= START =================
     if text == "/start":
