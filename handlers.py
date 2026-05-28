@@ -91,7 +91,6 @@ def handle_message(message):
 
         return
 
-
     # ================= START =================
     if text == "/start":
 
