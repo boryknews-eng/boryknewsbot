@@ -1,4 +1,3 @@
-
 import requests
 import json
 import os
@@ -342,4 +341,4 @@ def handle_callback(callback):
                 "• неякісний матеріал\n\n"
                 "🙏 Ви можете надіслати матеріал повторно."
             )
-```
+
