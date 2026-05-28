@@ -75,6 +75,7 @@ def send_to_moderation(message):
         send_message(ADMIN_ID, text, keyboard)
 
 
+```python
 # ================= MAIN =================
 
 def handle_message(message):
@@ -82,14 +83,39 @@ def handle_message(message):
     chat_id = message["chat"]["id"]
     text = message.get("text", "")
 
+    # ================= START =================
     if text == "/start":
 
-        send_message(
+        keyboard = {
+            "keyboard": [
+                ["📰 Новина", "📢 Оголошення"],
+                ["🚨 Тривога", "📣 Реклама"],
+                ["📸🎥 Надіслати матеріал"]
+            ],
+            "resize_keyboard": True
+        }
+
+        caption = (
+            "🛰 Ласкаво просимо до BorykNews LIVE\n\n"
+            "📍 Головний бот новин та подій Борисполя\n\n"
+            "Тут ви можете:\n"
+            "📰 надсилати новини\n"
+            "📸 ділитися фото та відео\n"
+            "📢 публікувати оголошення\n"
+            "🚨 повідомляти про важливі події\n"
+            "📣 замовляти рекламу\n\n"
+            "⚡️ Оберіть потрібний розділ нижче та почніть користуватись системою."
+        )
+
+        send_photo(
             chat_id,
-            "🛰 Вітаємо в BorykNews 🚀"
+            os.path.join("images", "welcome.jpg"),
+            caption,
+            keyboard
         )
 
         return
+```
 
     # ================= START =================
     if text == "/start":
