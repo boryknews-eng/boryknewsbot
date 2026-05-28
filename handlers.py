@@ -76,6 +76,7 @@ def send_to_moderation(message):
 
 
 ```python
+```python
 # ================= MAIN =================
 
 def handle_message(message):
