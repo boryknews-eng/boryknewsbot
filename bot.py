@@ -1,16 +1,4 @@
-import requests
-from config import TOKEN
-from handlers import handle_message, handle_callback
-
-URL = f"https://api.telegram.org/bot{TOKEN}"
-
-
-def get_updates(offset=None):
-    return requests.get(
-        f"{URL}/getUpdates",
-        params={"timeout": 30, "offset": offset}
-    ).json()
-
+import time
 
 def main():
 
@@ -19,18 +7,20 @@ def main():
 
     while True:
 
-        updates = get_updates(offset)
+        try:
+            updates = get_updates(offset)
 
-        for update in updates.get("result", []):
+            for update in updates.get("result", []):
 
-            offset = update["update_id"] + 1
+                offset = update["update_id"] + 1
 
-            if "message" in update:
-                handle_message(update["message"])
+                if "message" in update:
+                    handle_message(update["message"])
 
-            if "callback_query" in update:
-                handle_callback(update["callback_query"])
+                if "callback_query" in update:
+                    handle_callback(update["callback_query"])
 
+        except Exception as e:
+            print("ERROR:", e)
 
-if __name__ == "__main__":
-    main()
+        time.sleep(1)
